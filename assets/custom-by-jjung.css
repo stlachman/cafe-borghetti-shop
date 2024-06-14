@@ -9,7 +9,7 @@
 :root {
   --red: #cb1517;
   --cream: #ebe5d4;
-  --gold: #C0A969;
+  --gold: #c0a969;
   --site-max-width: 1440px;
 }
 
@@ -79,7 +79,8 @@ body {
     gap: 48px;
     padding: 0;
 
-    .desktop-localization-wrapper {
+    .desktop-localization-wrapper,
+    .header__search {
       display: none;
     }
 
