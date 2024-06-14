@@ -28,6 +28,36 @@
 {%- endstyle -%}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+
+  <!-- custom footer -->
+  <div class="custom-footer">
+    <div class="custom-footer__heading">
+      <h2 class="custom-footer__title">
+        <span>Pick up your</span>
+        <br/>
+        <span>pick-me-up.</span>
+      </h2>
+      <p class="custom-footer__description">
+        Borghetti is available for purchase at a variety of fine wine and spirits retailers nationwide.
+      </p>
+    </div>
+    <div class="custom-footer__img-wrapper">
+      <img src="{{ 'logo.svg' | asset_url }}" alt="footer logo" class="custom-footer__img" width="100" height="92" />
+    </div>
+    <div class="custom-footer__links">
+      <a class="custom-footer__link-icon">
+        <img src="{{ 'instagram.svg' | asset_url }}" alt="footer instagram icon" class="custom-footer__icon" width="48" height="48" />
+      </a>
+      <a class="custom-footer__link-icon">
+        <img src="{{ 'cart.svg' | asset_url }}" alt="footer cart icon" class="custom-footer__icon" width="48" height="48" />
+      </a>
+    </div>
+    <div class="custom-footer__caution">
+      PLEASE DRINK RESPONSIBLY. Caffè Borghetti® is a registered trademark of Fratelli Branca Distillerie S.p.A., Milan, Italy. Liqueur 25% Alc./Vol. Imported by Branca USA Inc., New York, NY
+    </div>
+  </div>
+  <!-- custom footer END -->
+
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank

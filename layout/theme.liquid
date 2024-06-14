@@ -1,3 +1,10 @@
+{% assign current_path = request.path %}
+{% if current_path == "/" %}
+  {% assign current_path = "shop-page" %}
+{% else %}
+  {% assign current_path = current_path | remove_first: '/' %}
+{% endif %}
+
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
@@ -283,9 +290,16 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+
+    <!-- Custom CSS -->
+    {{ 'custom-by-jjung.css' | asset_url | stylesheet_tag }}
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %} {{ current_path }}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>

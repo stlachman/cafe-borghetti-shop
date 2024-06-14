@@ -1,0 +1,99 @@
+<section class="borghetti-slider shopify-section section">
+  <h2 class="borghetti-slider__title">
+    {{ section.settings.slider_heading }}
+  </h2>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% if section.settings.slider_image_1 %}
+        <div class="swiper-slide">
+          <img src="{{ section.settings.slider_image_1 | image_url }}" alt="Borghetti Slider Image 1" width="auto" height="auto" />
+        </div>
+      {% endif %}
+      {% if section.settings.slider_image_2 %}
+        <div class="swiper-slide">
+          <img src="{{ section.settings.slider_image_2 | image_url }}" alt="Borghetti Slider Image 2" width="auto" height="auto" />
+        </div>
+      {% endif %}
+      {% if section.settings.slider_image_3 %}
+        <div class="swiper-slide">
+          <img src="{{ section.settings.slider_image_3 | image_url }}" alt="Borghetti Slider Image 3" width="auto" height="auto" />
+        </div>
+      {% endif %}
+      {% if section.settings.slider_image_4 %}
+        <div class="swiper-slide">
+          <img src="{{ section.settings.slider_image_4 | image_url }}" alt="Borghetti Slider Image 4" width="auto" height="auto" />
+        </div>
+      {% endif %}
+      {% if section.settings.slider_image_5 %}
+        <div class="swiper-slide">
+          <img src="{{ section.settings.slider_image_5 | image_url }}" alt="Borghetti Slider Image 5" width="auto" height="auto" />
+        </div>
+      {% endif %}
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<script defer>
+  const swiper = new Swiper('.swiper', {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: -20,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    loop: true,
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Borghetti Slider",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "slider_heading",
+      "default": "<p>A real espresso martini, minimal assembly required.</p>",
+      "label": "Slider Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "slider_image_1",
+      "label": "Slider Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "slider_image_2",
+      "label": "Slider Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "slider_image_3",
+      "label": "Slider Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "slider_image_4",
+      "label": "Slider Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "slider_image_5",
+      "label": "Slider Image 5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Borghetti Slider",
+      "category": "Custom Section"
+    }
+  ]
+}
+{% endschema %}

@@ -121,6 +121,30 @@
                   {%- endif -%}
                 </li>
               {%- endfor -%}
+              <li>
+                <a
+                  id="HeaderDrawer-pickUp"
+                  href="#pick-up"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                  {% if link.current %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  Pick Up
+                </a>
+              </li>
+              <li>
+                <a
+                  id="HeaderDrawer-shopOnline"
+                  href="#shop-online"
+                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                  {% if link.current %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  Shop Online
+                </a>
+              </li>
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">
