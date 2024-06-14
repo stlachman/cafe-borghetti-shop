@@ -180,7 +180,10 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              {% comment %} <span class="h2">{{ shop.name }}</span> {% endcomment %}
+              <div class="custom-header__logo-wrapper">
+                <img src="{{ 'logo.svg' | asset_url }}" alt="header logo" class="custom-header__logo" width="108" height="100" />
+              </div>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -220,7 +223,10 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              {% comment %} <span class="h2">{{ shop.name }}</span> {% endcomment %}
+              <div class="custom-header__logo-wrapper">
+                <img src="{{ 'logo.svg' | asset_url }}" alt="header logo" class="custom-header__logo" width="108" height="100" />
+              </div>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -252,7 +258,7 @@
           </localization-form>
         {%- endif -%}
       </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
+      {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
@@ -282,14 +288,18 @@
         {%- endcase -%}
       {%- endfor -%}
 
+      <a class="custom-header__right-menu custom-header__pick-up">Pick Up</a>
+      <a class="custom-header__right-menu custom-header__shop-online">Shop Online</a>
+
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
-          if cart == empty
-            render 'icon-cart-empty'
-          else
-            render 'icon-cart'
-          endif
+          # if cart == empty
+          #   render 'icon-cart-empty'
+          # else
+          #   render 'icon-cart'
+          # endif
         -%}
+        <img src="{{ 'cart.svg' | asset_url }}" alt="header cart icon" class="custom-header__icon" width="48" height="48" />
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
