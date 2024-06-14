@@ -19,7 +19,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -27,7 +27,10 @@
           }
         }
       },
-      "block_order": ["heading", "button"],
+      "block_order": [
+        "heading",
+        "button"
+      ],
       "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
@@ -82,5 +85,10 @@
       }
     }
   },
-  "order": ["shop_hero_qfxEtF", "image_banner", "featured_collection", "borghetti_slider_7VNgBe"]
+  "order": [
+    "shop_hero_qfxEtF",
+    "image_banner",
+    "featured_collection",
+    "borghetti_slider_7VNgBe"
+  ]
 }
