@@ -1,6 +1,6 @@
 {% assign current_path = request.path %}
 {% if current_path == "/" %}
-  {% assign current_path = "shop-page" %}
+  {% assign current_path = "shop-homepage" %}
 {% else %}
   {% assign current_path = current_path | remove_first: '/' %}
 {% endif %}

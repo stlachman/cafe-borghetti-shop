@@ -40,7 +40,37 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
-    <div
+    <!-- custom product card -->
+    <div class="card-image">
+      <a href="{{ card_product.url }}">
+        <img
+          class="image"
+          src="{{ card_product.featured_media | image_url }}"
+          alt="{{ card_product.featured_media.alt | escape }}"
+          width="{{ card_product.featured_media.width }}"
+          height="{{ card_product.featured_media.height }}"
+          {% unless lazy_load == false %}
+            loading="lazy"
+          {% endunless %}
+        />
+      </a>
+    </div>
+    <div class="card-content">
+      <h3>
+        <a href="{{ card_product.url }}">{{ card_product.title }}</a>
+      </h3>
+      {% if card_product.variants.size > 1 %}
+        <a class="card-btn" href="{{ card_product.url }}"><span>View Details</span></a>
+      {% else %}
+        <form class="card-btn" action="/cart/add" method="post">
+          <input type="hidden" name="id" value="{{ card_product.variants[0].id }}">
+          <button type="submit"><span>Add to Cart</span></button>
+        </form>
+      {% endif %}
+    </div>
+    <!-- custom product card END -->
+
+    {% comment %} <div
       class="
         card card--{{ settings.card_style }}
         {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
@@ -531,7 +561,7 @@
           {%- endif -%}
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
   </div>
 {%- else -%}
   {%- liquid
