@@ -1,0 +1,22 @@
+<div class="product-borghetti-hero">
+  <div class="product-grid">
+    <div class="product-info">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <div class="product-description">{{ product.description }}</div>
+      <p class="product-price">{{ product.price | money }}</p>
+      {% if product.variants[0].available %}
+        <form action="/cart/add" method="post">
+          <input type="hidden" name="id" value="{{ card_product.variants[0].id }}">
+          <button class="add-to-cart-btn" type="submit"><span>Add to Cart</span></button>
+        </form>
+      {% else %}
+        <div class="add-to-cart-btn out-of-stock"><span>out of stock</span></div>
+      {% endif %}
+      <a class="find-near-you-btn" href="#">Find near you</a>
+    </div>
+    <div class="product-image">
+      <img src="{{ 'borghetti-front.png' | asset_url }}" alt="Borghetti front" class="product-img" width="264" height="837" />
+    </div>
+  </div>
+  <div class="bottom-triange"></div>
+</div>

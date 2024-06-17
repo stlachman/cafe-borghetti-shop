@@ -3,6 +3,7 @@
   {% assign current_path = "shop-homepage" %}
 {% else %}
   {% assign current_path = current_path | remove_first: '/' %}
+  {% assign current_path = current_path | replace: '/', '-' %}
 {% endif %}
 
 <!doctype html>
