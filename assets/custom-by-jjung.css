@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/zvs8nbk.css");
+
 /* import fonts from assets folder, like `AzoSuper.otf` */
 @font-face {
   font-family: "AzoSuper";
@@ -7,18 +9,25 @@
 
 /* set global variables */
 :root {
+  /* color */
   --black: #000000;
   --red: #cb1517;
   --cream: #ebe5d4;
   --gold: #c0a969;
+
+  /* font */
+  --font-azo-super: "AzoSuper", sans-serif;
+  --font-obviously: "obviously", sans-serif;
+
+  /* size */
   --site-max-width: 1440px;
 }
 
 body {
-  font-family: "AzoSuper", sans-serif;
+  font-family: var(--font-azo-super);
 
   h2 {
-    font-family: "AzoSuper", sans-serif;
+    font-family: var(--font-azo-super);
   }
 }
 
@@ -44,10 +53,10 @@ body {
 
       li {
         a {
-          font-family: sans-serif;
+          font-family: var(--font-obviously);
           font-size: 14px;
           font-style: normal;
-          font-weight: 650;
+          font-weight: 400;
           line-height: 130%;
           letter-spacing: 2.52px;
           text-transform: uppercase;
@@ -86,10 +95,10 @@ body {
     }
 
     a.custom-header__right-menu {
-      font-family: sans-serif;
+      font-family: var(--font-obviously);
       font-size: 14px;
       font-style: normal;
-      font-weight: 650;
+      font-weight: 400;
       line-height: 130%;
       letter-spacing: 2.52px;
       text-transform: uppercase;
@@ -128,10 +137,10 @@ body {
 
           li {
             a {
-              font-family: sans-serif;
+              font-family: var(--font-obviously);
               font-size: 24px;
               font-style: normal;
-              font-weight: 650;
+              font-weight: 400;
               line-height: 120%;
               text-transform: uppercase;
               padding-inline: 0;
@@ -171,7 +180,7 @@ body {
 
       .custom-footer__heading {
         span {
-          font-family: "AzoSuper";
+          font-family: var(--font-azo-super);
           font-size: 52px;
           font-style: normal;
           font-weight: 900;
@@ -185,10 +194,10 @@ body {
       }
 
       .custom-footer__description {
-        font-family: sans-serif;
+        font-family: var(--font-obviously);
         font-size: 14px;
         font-style: normal;
-        font-weight: 540;
+        font-weight: 400;
         line-height: 150%;
         letter-spacing: 0.56px;
         text-transform: none;
@@ -212,10 +221,10 @@ body {
       }
 
       .custom-footer__caution {
-        font-family: sans-serif;
+        font-family: var(--font-obviously);
         font-size: 14px;
         font-style: normal;
-        font-weight: 450;
+        font-weight: 400;
         line-height: 145%;
         letter-spacing: 0.7px;
         text-transform: none;
@@ -263,21 +272,40 @@ body {
 .borghetti-slider {
   max-width: var(--site-max-width);
   margin-inline: auto;
-  padding: 60px 0;
+  padding: 100px 0 60px;
   background-color: var(--cream);
+
+  @media (max-width: 600px) {
+    padding-block: 48px;
+  }
 
   .borghetti-slider__title {
     color: var(--red);
-    font-family: "AzoSuper";
-    font-size: 52px;
+    font-family: var(--font-azo-super);
+    font-size: 96px;
     font-style: normal;
     font-weight: 900;
-    line-height: 150%;
+    line-height: 100%;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 48px;
     max-width: 1320px;
     padding-inline: 60px;
+    margin: 16px auto;
+
+    p {
+      margin: 0;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 54px;
+    }
+    @media screen and (max-width: 900px) {
+      font-size: 48px;
+    }
+    @media screen and (max-width: 600px) {
+      padding-inline: 24px;
+    }
   }
 
   .swiper {
@@ -287,6 +315,10 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+
+    @media (max-width: 600px) {
+      padding: 50px 0px 0px;
+    }
 
     .swiper-wrapper {
       width: 100%;
@@ -301,6 +333,10 @@ body {
         border: 6px solid var(--gold);
         border-radius: 16px;
         overflow: hidden;
+
+        @media (max-width: 600px) {
+          height: 358px;
+        }
 
         img {
           width: 100%;
@@ -366,6 +402,14 @@ section[id$="featured_collection"] {
                   object-fit: cover;
                   transition: transform 0.3s ease-in-out;
 
+                  @media (max-width: 989px) {
+                    object-fit: contain;
+                  }
+
+                  @media (max-width: 600px) {
+                    object-fit: cover;
+                  }
+
                   &:hover {
                     transform: scale(1.05);
                   }
@@ -396,7 +440,7 @@ section[id$="featured_collection"] {
 
                   a {
                     color: var(--cream);
-                    font-family: "AzoSuper";
+                    font-family: var(--font-azo-super);
                     font-size: 48px;
                     font-style: normal;
                     font-weight: 900;
@@ -434,10 +478,10 @@ section[id$="featured_collection"] {
 
                   span {
                     color: var(--red);
-                    font-family: sans-serif;
+                    font-family: var(--font-obviously);
                     font-size: 24px;
                     font-style: normal;
-                    font-weight: 650;
+                    font-weight: 700;
                     line-height: normal;
                     text-transform: uppercase;
                     text-align: center;

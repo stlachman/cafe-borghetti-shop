@@ -288,8 +288,11 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      <a class="custom-header__right-menu custom-header__pick-up" href="#pick-up">Pick Up</a>
-      <a class="custom-header__right-menu custom-header__shop-online" href="#shop-online">Shop Online</a>
+      <!-- custom right menu -->
+      {% for link in linklists.more-menu.links -%}
+        {{ link.title | link_to: link.url, class: 'custom-header__right-menu' }}
+      {%- endfor %}
+      <!-- custom right menu END -->
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
