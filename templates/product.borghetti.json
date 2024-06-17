@@ -77,8 +77,25 @@
         "padding_bottom": 12
       }
     },
+    "video_EyiLKn": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h0",
+        "enable_video_looping": false,
+        "video": "shopify:\/\/files\/videos\/borghetti.mp4",
+        "video_url": "https:\/\/vimeo.com\/960576724",
+        "cover_image": "shopify:\/\/shop_images\/borghetti_16x9_f8584527-9013-4d21-a030-806898817a5e.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -98,6 +115,7 @@
   },
   "order": [
     "main",
+    "video_EyiLKn",
     "related-products"
   ]
 }

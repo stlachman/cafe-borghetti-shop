@@ -1,4 +1,7 @@
-<section
+{% if template contains 'product.borghetti' %}
+  {% render "product-borghetti-hero" %}
+{% else %}
+<div
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
@@ -743,7 +746,8 @@
       }
     </script>
   </div>
-</section>
+</div>
+{% endif %}
 
 {% schema %}
 {
