@@ -121,30 +121,22 @@
                   {%- endif -%}
                 </li>
               {%- endfor -%}
-              <li>
-                <a
-                  id="HeaderDrawer-pickUp"
-                  href="#pick-up"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+
+              <!-- custom right menu -->
+              {% for link in linklists.more-menu.links -%}
+                <li>
+                  {% assign menu_id = 'HeaderDrawer-' | append: link.title | handleize %}
+                  {% assign custom_class = 'menu-drawer__menu-item list-menu__item link link--text focus-inset' %}
                   {% if link.current %}
-                    aria-current="page"
+                    {% assign custom_class = custom_class | append: ' menu-drawer__menu-item--active' %}
+                    {{ link.title | link_to: link.url, class: custom_class, id: menu_id, aria_current: 'page' }}
+                  {% else %}
+                    {{ link.title | link_to: link.url, class: custom_class, id: menu_id }}
                   {% endif %}
-                >
-                  Pick Up
-                </a>
-              </li>
-              <li>
-                <a
-                  id="HeaderDrawer-shopOnline"
-                  href="#shop-online"
-                  class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                  {% if link.current %}
-                    aria-current="page"
-                  {% endif %}
-                >
-                  Shop Online
-                </a>
-              </li>
+                </li>
+              {%- endfor %}
+              <!-- custom right menu END -->
+
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">

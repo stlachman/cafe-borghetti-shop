@@ -32,11 +32,7 @@
       "type": "borghetti-slider",
       "settings": {
         "slider_heading": "<p>A real espresso <br\/>martini, minimal <br\/>assembly required.<\/p>",
-        "slider_image_1": "shopify:\/\/shop_images\/bottle-with-glass.png",
-        "slider_image_2": "shopify:\/\/shop_images\/bottle-on-pane.png",
-        "slider_image_3": "shopify:\/\/shop_images\/two-glasses.png",
-        "slider_image_4": "shopify:\/\/shop_images\/solo-bottle.jpg",
-        "slider_image_5": "shopify:\/\/shop_images\/bottle-with-two-glasses.webp"
+        "slider_image_1": "shopify:\/\/shop_images\/bottle-with-glass.png"
       }
     }
   },
