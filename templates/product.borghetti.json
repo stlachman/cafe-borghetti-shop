@@ -77,7 +77,7 @@
         "padding_bottom": 12
       }
     },
-    "video_EyiLKn": {
+    "video": {
       "type": "video",
       "settings": {
         "heading": "",
@@ -91,6 +91,18 @@
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "borghetti_recipe": {
+      "type": "borghetti-recipe",
+      "settings": {
+        "heading": "espresso martini",
+        "subheading": "BORGHETTI 30s",
+        "recipe_image": "shopify:\/\/shop_images\/borghetti-recipe.png",
+        "what_you_need_heading": "you'll need",
+        "recipe_ingrediants": "<p>1 1\/2 parts <span style=\"text-decoration:underline\">Borghetti Espresso Liqueur<\/span><\/p><p>1 1\/2 parts of your favorite vodka<\/p><p>Ice cubes<\/p><p>Espresso beans or coffee beans for garnish (optional)<\/p>",
+        "how_to_make_heading": "steps",
+        "recipe_steps": "<ol><li>Fill a cocktail shaker with ice cubes.<\/li><li>Add the Borghetti Espresso Liqueur and vodka to the shaker.<\/li><li>Shake well until the mixture is thoroughly chilled.<\/li><li>Strain the cocktail into a chilled martini glass or rocks glass filled with ice.<\/li><li>Optionally, garnish with a few espresso beans or coffee beans on top for added flair.<\/li><\/ol>"
       }
     },
     "related-products": {
@@ -115,7 +127,8 @@
   },
   "order": [
     "main",
-    "video_EyiLKn",
+    "video",
+    "borghetti_recipe",
     "related-products"
   ]
 }
