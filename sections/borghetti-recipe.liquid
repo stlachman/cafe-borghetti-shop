@@ -1,0 +1,93 @@
+<div class="borghetti-recipe shopify-section section">
+  <div class="borghetti-recipe-heading">
+    <h2 class="borghetti-recipe__title">
+      {{ section.settings.heading }}
+    </h2>
+    <h3 class="borghetti-recipe__subheading">
+      {{ section.settings.subheading }}
+    </h3>
+  </div>
+  <div class="borghetti-recipe-grid">
+    <div class="borghetti-recipe__image">
+      <div class="img-wrapper">
+        <img src="{{ section.settings.recipe_image | image_url }}" alt="Borghetti Recipe Image" width="auto" height="auto" />
+      </div>
+    </div>
+    <div class="borghetti-recipe__content">
+      <div class="borghetti-recipe__what-you-need">
+        <h4 class="borghetti-recipe__what-you-need-heading">
+          {{ section.settings.what_you_need_heading }}
+        </h4>
+        <div class="borghetti-recipe__ingrediants">
+          {{ section.settings.recipe_ingrediants }}
+        </div>
+      </div>
+      <div class="borghetti-recipe__how-to-make">
+        <h4 class="borghetti-recipe__how-to-make-heading">
+          {{ section.settings.how_to_make_heading }}
+        </h4>
+        <div class="borghetti-recipe__steps">
+          {{ section.settings.recipe_steps }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-triange"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Borghetti recipe",
+  "tag": "section",
+  "class": "section borghetti-recipe-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "espresso martini",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Borghetti 30s",
+      "label": "Subheading"
+    },
+    {
+      "type": "image_picker",
+      "id": "recipe_image",
+      "label": "Recipe Image"
+    },
+    {
+      "type": "text",
+      "id": "what_you_need_heading",
+      "default": "you'll need",
+      "label": "What You Need Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "recipe_ingrediants",
+      "default": "<p>1 1/2 parts Borghetti Espresso Liqueur</p><p>1 1/2 parts of your favorite vodka</p><p>Ice cubes</p><p>Espresso beans or coffee beans for garnish (optional)</p>",
+      "label": "Recipe Ingrediants"
+    },
+    {
+      "type": "text",
+      "id": "how_to_make_heading",
+      "default": "steps",
+      "label": "How to Make Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "recipe_steps",
+      "default": "<p>Recipe steps here.</p>",
+      "label": "Recipe Steps"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Borghetti Recipe",
+      "category": "Custom Section"
+    }
+  ]
+}
+{% endschema %}
