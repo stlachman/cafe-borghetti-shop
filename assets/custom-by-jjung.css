@@ -696,7 +696,7 @@ section[id$="featured_collection"] {
     position: relative;
 
     @media (max-width: 600px) {
-      padding: 50px 24px 70px;
+      padding: 50px 24px 150px;
     }
 
     .borghetti-recipe-heading {
