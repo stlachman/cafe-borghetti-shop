@@ -853,7 +853,26 @@ section[id$="featured_collection"] {
                 padding-left: 43px;
 
                 &::before {
+                  content: "";
+                  position: absolute;
+                  top: calc(50% - 12px);
+                  left: 0;
+                  width: 28px;
+                  height: 28px;
+                  background-color: var(--gold);
+                  border-radius: 50%;
+                }
+
+                &::after {
                   content: counter(list-counter);
+                  position: absolute;
+                  top: calc(50% - 14px);
+                  left: 0;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
                   text-align: center;
                   font-family: var(--font-obviously);
                   font-size: 16px;
@@ -861,15 +880,6 @@ section[id$="featured_collection"] {
                   font-weight: 670;
                   line-height: 100%;
                   letter-spacing: 0.32px;
-                  position: absolute;
-                  left: 0;
-                  width: 27px;
-                  height: 27px;
-                  background-color: var(--gold);
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  border-radius: 50%;
                 }
               }
             }
