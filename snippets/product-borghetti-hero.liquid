@@ -6,7 +6,7 @@
       <p class="product-price">{{ product.price | money }}</p>
       {% if product.variants[0].available %}
         <form action="/cart/add" method="post">
-          <input type="hidden" name="id" value="{{ card_product.variants[0].id }}">
+          <input type="hidden" name="id" value="{{ product.variants[0].id }}">
           <button class="add-to-cart-btn" type="submit"><span>Add to Cart</span></button>
         </form>
       {% else %}
