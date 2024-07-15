@@ -832,6 +832,10 @@ section[id$="featured_collection"] {
           letter-spacing: 0.28px;
           margin-bottom: 24px;
 
+          a {
+            color: var(--black);
+          }
+
           &:last-child {
             margin-bottom: 0;
           }
@@ -899,6 +903,105 @@ section[id$="featured_collection"] {
       clip-path: polygon(0 70%, 100% 0%, 100% 100%, 0 100%);
       background-color: var(--red);
       z-index: 2;
+    }
+  }
+}
+
+.age-gate {
+  background-color: var(--red);
+  background-image: url("./21plus-desktop.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  z-index: 14;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: 900px) {
+    background-image: url("./21plus-mobile.jpg");
+
+    img {
+      max-width: 220px;
+    }
+  }
+
+  .age-gate__content {
+    padding: 60px;
+
+    @media screen and (max-width: 900px) {
+      padding: 24px;
+    }
+
+    h2 {
+      color: var(--cream);
+      font-size: 64px;
+      line-height: 66px; /* 103.125% */
+      text-transform: uppercase;
+      max-width: 660px;
+      margin: 48px 0 32px;
+
+      @media screen and (max-width: 900px) {
+        font-size: 40px;
+        line-height: 44px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .age-gate__buttons {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      border-radius: 8px;
+      border: 2px solid var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      text-transform: uppercase;
+      font-family: "obviously-wide";
+      font-size: 24px;
+      color: var(--cream);
+      width: 160px;
+      height: 70px;
+      padding-bottom: 6px;
+      cursor: pointer;
+
+      @media screen and (max-width: 900px) {
+        font-size: 16px;
+        width: 143px;
+        height: 57px;
+      }
+
+      &:hover {
+        background: var(--cream);
+        color: var(--red);
+      }
+    }
+  }
+
+  p {
+    position: absolute;
+    bottom: 1rem;
+    max-width: 750px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 var(--side-padding);
+    font-size: 14px;
+    font-style: normal;
+    line-height: 145%; /* 20.3px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    font-family: "obviously-narrow", sans-serif;
+    color: var(--red);
+    text-align: center;
+    width: 100%;
+
+    @media screen and (max-width: 900px) {
+      font-size: 12px;
+      line-height: 116%;
+      letter-spacing: 0.24px;
     }
   }
 }
