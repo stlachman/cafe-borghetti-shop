@@ -453,6 +453,11 @@ section[id$="featured_collection"] {
                   text-transform: uppercase;
                   text-decoration: none;
                   transition: color 0.3s ease-in-out;
+                  word-break: keep-all;
+
+                  @media (max-width: 900px) {
+                    font-size: 32px;
+                  }
 
                   &:hover {
                     color: var(--gold);
