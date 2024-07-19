@@ -916,6 +916,7 @@ section[id$="featured_collection"] {
   z-index: 14;
   width: 100%;
   height: 100%;
+  display: none;
 
   @media screen and (max-width: 900px) {
     background-image: url("./21plus-mobile.jpg");
