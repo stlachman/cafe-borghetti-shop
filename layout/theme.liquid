@@ -305,7 +305,7 @@
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %} {{ current_path }}">
 
     <!-- Age Gate -->
-    <div id="age-gate" class="age-gate" data-module="ageGate">
+    {% comment %} <div id="age-gate" class="age-gate" data-module="ageGate">
       <div class="age-gate__content">
         <img src="{{ '21plus-logo.svg' | asset_url }}" class="custom-logo" alt="Borghetti - Italian for Espresso" width="320" height="120" />
 
@@ -318,7 +318,9 @@
       </div>
 
       <p>PLEASE DRINK RESPONSIBLY. Antica Formula® is a registered trademark of Fratelli Branca Distillerie S.p.A., Milan, Italy. Vermouth 16.5% Alc./Vol. Imported by Branca USA Inc., New York, NY</p>
-    </div>
+    </div> {% endcomment %}
+
+    {% include 'age-gate' %}
     <!-- Age Gate End -->
 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -391,7 +393,7 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script defer>
+    {% comment %} <script defer>
       function setCookie(name, value, days) {
         let expires = "";
         if (days) {
@@ -434,7 +436,7 @@
       } catch (c) {
         console.log(c);
       }
-    </script>
+    </script> {% endcomment %}
   </body>
 </html>
 
