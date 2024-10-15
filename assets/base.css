@@ -3,6 +3,8 @@
   --alpha-button-border: 1;
   --alpha-link: 0.85;
   --alpha-badge-border: 0.1;
+  --font-sansserif: "obviously", sans-serif;
+  --font-sansserif-wide: "obviously-wide", sans-serif;
 }
 
 .product-card-wrapper .card,

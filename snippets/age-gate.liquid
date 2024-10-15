@@ -1,0 +1,23 @@
+<script src="{{ 'age-gate.js' | asset_url }}" defer="defer"></script>
+<link href="{{ 'age-gate.css' | asset_url }}" rel="stylesheet" type="text/css" media="all" />
+
+<div id="birthday-gate" class="birthday-gate" data-module="birthdayGate" style="background-image: url({{ 'age-gate-bg.webp' | asset_url }})">
+	<div class="birthday-gate__form">
+		<img src="{{ 'starlogo.png' | asset_url }}" class="custom-logo" alt="Borghetti - Italian for Espresso" />
+
+    <form>
+      <legend>Date of birth:</legend>
+
+      <fieldset>
+        <input id="month" required type="number" name="month" placeholder="MM" max="12" min="1" />
+        <input id="day" required type="number" name="day" placeholder="DD" max="31" min="1" />
+        <input id="year" required type="number" name="year" placeholder="YYYY" max="2021" min="1900" />
+      </fieldset>
+
+      <button id="age-gate-accept" type="submit">Enter</button>
+      <span id="age-gate-error" class="error"></span>
+    </form>
+
+    <p>You must be of legal drinking and purchasing age in your location to enter this site. If no such laws exist in your location, you must be 21 to enter this site. Do not forward these materials to anyone below the legal drinking age.</p>
+  </div>
+</div>

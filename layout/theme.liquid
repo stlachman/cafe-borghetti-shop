@@ -304,22 +304,7 @@
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %} {{ current_path }}">
 
-    <!-- Age Gate -->
-    <div id="age-gate" class="age-gate" data-module="ageGate">
-      <div class="age-gate__content">
-        <img src="{{ '21plus-logo.svg' | asset_url }}" class="custom-logo" alt="Borghetti - Italian for Espresso" width="320" height="120" />
-
-        <h2>PLEASE CONFIRM YOU ARE 21 YEARS OR OLDER</h2>
-
-        <div class="age-gate__buttons">
-          <button id="yes">Yes</button>
-          <button id="no">No</button>
-        </div>
-      </div>
-
-      <p>PLEASE DRINK RESPONSIBLY. Antica Formula® is a registered trademark of Fratelli Branca Distillerie S.p.A., Milan, Italy. Vermouth 16.5% Alc./Vol. Imported by Branca USA Inc., New York, NY</p>
-    </div>
-    <!-- Age Gate End -->
+    {% include 'age-gate' %}
 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
@@ -390,51 +375,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
-    <script defer>
-      function setCookie(name, value, days) {
-        let expires = "";
-        if (days) {
-          const date = new Date();
-          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-          expires = ";expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + ";path=/;domain=.caffeborghetti.com";
-      }
-
-      function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for(let i=0;i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-      }
-
-      try {
-        const age_gate = document.getElementById("age-gate");
-        if("euydb8273ebisdufn9238en92dnf" != getCookie("borghettigate_accepted")){
-          const age_gate_accept = age_gate.querySelector("#yes");
-          age_gate.style.display = "block";
-
-          age_gate_accept.addEventListener("click", () => {
-            console.log("age_gate_accept clicked", age_gate);
-            age_gate.style.display = "none";
-
-            try {
-              setCookie("borghettigate_accepted", "euydb8273ebisdufn9238en92dnf", 1);
-            }
-            catch (c) {}
-          });
-        } else {
-          age_gate.style.display = "none";
-        }
-      } catch (c) {
-        console.log(c);
-      }
-    </script>
   </body>
 </html>
 
