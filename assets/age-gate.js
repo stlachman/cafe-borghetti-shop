@@ -10,7 +10,7 @@ function BirthdayGate() {
     }
     document.cookie = name + "=" + (value || "") + expires + ";path=/;domain=.caffeborghetti.com";
   }
-  
+
   function verifyAge() {
     // set ageVerified to false to reset the value if multiple attempts are made
     ageVerified = false;
@@ -18,7 +18,7 @@ function BirthdayGate() {
     const month = document.getElementById("month").value;
     const day = document.getElementById("day").value;
 
-    const birthday = `${year}-${month}-${day}`;
+    const birthday = `${year}-${month.length === 1 ? `0${month}` : month}-${day.length === 1 ? `0${day}` : day}`;
     const birthdayDate = new Date(birthday);
     const today = new Date();
 
