@@ -289,9 +289,11 @@
       {%- endfor -%}
 
       <!-- custom right menu -->
-      {% for link in linklists.more-menu.links -%}
-        {{ link.title | link_to: link.url, class: 'custom-header__right-menu' }}
-      {%- endfor %}
+    {% for link in linklists.more-menu.links -%}
+     {% unless link.title | strip | downcase == 'shop online' %}
+      {{ link.title | link_to: link.url, class: 'custom-header__right-menu' }}
+      {% endunless %}
+    {%- endfor %}
       <!-- custom right menu END -->
 
     </div>
