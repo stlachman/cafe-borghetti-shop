@@ -62,10 +62,7 @@
       {% if card_product.variants.size > 1 %}
         <a class="card-btn" href="{{ card_product.url }}"><span>View Details</span></a>
       {% else %}
-        <form action="/cart/add" method="post">
-          <input type="hidden" name="id" value="{{ card_product.variants[0].id }}">
-          <button class="card-btn" type="submit"><span>Add to Cart</span></button>
-        </form>
+          <p>Borghetti is available on Instacart and Door Dash</p>
       {% endif %}
     </div>
     <!-- custom product card END -->
